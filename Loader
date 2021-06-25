@@ -1,0 +1,7 @@
+local gameid = game.PlaceId
+
+if gameid == 6483072762 then
+    loadstring(game:HttpGet("https://github.com/Kitty-Admin/Pan-Hub/blob/main/LiterallyFNF")()
+elseif gameid == 6417009050
+    loadstring(game:HttpGet("https://github.com/Kitty-Admin/Pan-Hub/blob/main/BasicallyFNF")()
+end
