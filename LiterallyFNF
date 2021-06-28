@@ -9,6 +9,10 @@ local Lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scri
 local Window = Lib:Window("Pan Hub")
 
 local Server = Window:Server("Main", "7001362901")
+local cret = Server:Channel("Credits")
+
+cret:Label("Creator; SuperACK345 (whatdefok#3075)")
+cret:Label("Tester; RunekrSecurity (Anthonyy#0439")
 
 local AutoPlay = Server:Channel("Auto Play")
 
