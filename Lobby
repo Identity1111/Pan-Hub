@@ -15,14 +15,28 @@ end)
 
 b:Button("Swat",function()
     local A_1 = "SwatGun"
-local A_2 = getgenv().WearOutfit
-local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
-Event:FireServer(A_1, A_2)
+    local A_2 = getgenv().WearOutfit
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+    Event:FireServer(A_1, A_2)
 end)
 
 b:Button("Police",function()
     local A_1 = "Gun"
-local A_2 = getgenv().WearOutfit
-local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
-Event:FireServer(A_1, A_2)
+    local A_2 = getgenv().WearOutfit
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+    Event:FireServer(A_1, A_2)
+end)
+
+b:Button("Hardcore",function()
+    local A_1 = "LinkedSword"
+    local A_2 = getgenv().WearOutfit
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+    Event:FireServer(A_1, A_2)
+end)
+
+b:Button("Lolli Pop",function()
+    local A_1 = "LolliPop"
+    local A_2 = getgenv().WearOutfit
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+    Event:FireServer(A_1, A_2)
 end)
