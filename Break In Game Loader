@@ -1,0 +1,132 @@
+_G.ToggleColor = Color3.fromRGB(143,111,191)
+_G.ButtonColor = Color3.fromRGB(143,111,191)
+_G.SliderColor = Color3.fromRGB(143,111,191)
+
+game:GetService("ReplicatedStorage").RemoteEvents.Cattery:FireServer()
+getgenv().HealYou = false
+getgenv().KillBad = false
+local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() -- It's obfuscated, I won't let you see my ugly coding skills. =)
+
+local w = library:CreateWindow("Break In - Game")
+
+local a = w:CreateFolder("Player")
+local b = w:CreateFolder("Items")
+local c = w:CreateFolder("Teleport")
+
+c:Button("Basement",function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71, -15, -163)
+end)
+
+c:Button("House",function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-36,3,-200)
+end)
+
+c:Button("Attic",function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16,35,-220)
+end)
+
+c:Button("Store",function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-422,3,-121)
+end)
+
+:Button("Sewer",function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(129,3,-125)
+end)
+
+c:Button("Boss Room",function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-39,-287,-1480)
+end)
+
+--Items
+
+b:Button("Lolli Pop",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Lollipop")
+end)
+
+b:Button("Plank",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Plank")
+end)
+
+b:Button("Hammer",function()
+    local A_1 = true
+    local A_2 = "Hammer"
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.BasementWeapon
+    Event:FireServer(A_1, A_2)
+end)
+
+b:Button("Cure",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Cure")
+end)
+
+b:Button("Apple",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Apple")
+end)
+
+b:Button("Cola",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("BloxyCola")
+end)
+
+b:Button("Medic Kit",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("MedKit")
+end)
+
+b:Button("Pizza",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Pizza2")
+end)
+
+b:Button("Cookie",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Cookie")
+end)
+
+b:Button("Basment Key",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Key")
+end)
+
+b:Button("Teddy",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("TeddyBloxpin")
+end)
+
+b:Button("Sword",function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("LinkedSword")
+end)
+
+
+--Player Scripts
+
+
+a:Toggle("Heal",function(bool)
+    getgenv().HealYou = bool
+end)
+
+a:Button("Instant Heal",function()
+    for i = 1, 20 do
+
+            local args = {
+                [1] = "Cat"
+            }
+
+            game:GetService("ReplicatedStorage").RemoteEvents.Energy:FireServer(unpack(args))
+
+    end
+end)
+
+--Checkers
+
+while true do
+    if getgenv().HealYou == true then
+        local args = {
+            [1] = "Cat"
+        }
+
+        game:GetService("ReplicatedStorage").RemoteEvents.Energy:FireServer(unpack(args))
+        wait(0.2)
+    end
+
+    if getgenv().KillBad == true then
+        for i,v in pairs(game.Workspace.BadGuys:GetChildren()) do
+            game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,996)
+        end
+    end
+        wait(0.2)
+    end
+end
