@@ -1,0 +1,28 @@
+_G.ToggleColor = Color3.fromRGB(143,111,191)
+_G.ButtonColor = Color3.fromRGB(143,111,191)
+_G.SliderColor = Color3.fromRGB(143,111,191)
+
+getgenv().WearOutfit = false
+local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() -- It's obfuscated, I won't let you see my ugly coding skills. =)
+
+local w = library:CreateWindow("Break In - Lobby")
+
+local b = w:CreateFolder("Roles")
+
+b:Toggle("Wear Outfit",function(bool)
+    getgenv().WearOutfit = bool
+end)
+
+b:Button("Swat",function()
+    local A_1 = "SwatGun"
+local A_2 = getgenv().WearOutfit
+local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+Event:FireServer(A_1, A_2)
+end)
+
+b:Button("Police",function()
+    local A_1 = "Gun"
+local A_2 = getgenv().WearOutfit
+local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+Event:FireServer(A_1, A_2)
+end)
