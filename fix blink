@@ -1,0 +1,15 @@
+function name(yes)
+    local args = {
+        [1] = "RolePlayName",
+        [2] = yes
+    }
+
+    game:GetService("ReplicatedStorage").RemoteEvents.RPNameEvent:FireServer(unpack(args))
+end
+
+while true do
+    name("😐")
+    wait(math.random(1,5))
+    name("😑")
+    wait(0.2)
+end
